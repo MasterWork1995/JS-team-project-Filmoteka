@@ -23,7 +23,7 @@ function parseWatchedFilmsMarkup() {
 function parseQueueFilmsMarkup() {
   if (parsedQueueFilmsIds) {
     libraryList.innerHTML = '';
-    btnLibWatched.classList.re('focus');
+    btnLibWatched.classList.remove('focus');
     parsedQueueFilmsIds.forEach(loadWachedFilm);
   } else return;
 }
