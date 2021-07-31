@@ -25,6 +25,8 @@ export default function onOpenModalFilmCard(e) {
     instance.show();
     modalFilm = document.querySelector('.modal-film');
     modalFilm.addEventListener('click', onAddFilmToLocalStorage);
+    const closeBtnModalFilm = document.querySelector('[data-action="close-film"]');
+    closeBtnModalFilm.addEventListener('click', onCloseModalCard);
   })();
 
   window.addEventListener('keydown', onCloseModalFilmCard);
@@ -36,6 +38,11 @@ function onCloseModalFilmCard(e) {
     window.removeEventListener('keydown', onCloseModalFilmCard);
     modalFilm.removeEventListener('click', onAddFilmToLocalStorage);
   }
+}
+
+function onCloseModalCard() {
+  instance.close();
+  modalFilm.removeEventListener('click', onAddFilmToLocalStorage);
 }
 
 //------------------------------------------local storage----------------------------------------------------
